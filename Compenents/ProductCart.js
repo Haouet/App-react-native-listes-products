@@ -10,20 +10,19 @@ import {
 var {width} = Dimensions.get("window");
 
 const ProductCart = (props) => {
-    const {title,price,desc,img} = props
+    const {email,first_name,last_name,avatar} = props
   return (
     <View style={styles.container}>
         <Image style={styles.image}
         resizeMode="contain"
-        source={{uri: img ? img :  'https://babaali.tn/wp-content/uploads/2022/11/espadrilles-colores-pour-femme-plateforme-a-la-mode-300x300.jpg'}}
+        source={{uri: avatar ? avatar :  'https://babaali.tn/wp-content/uploads/2022/11/espadrilles-colores-pour-femme-plateforme-a-la-mode-300x300.jpg'}}
         />
         <View style={styles.card}/>
         <Image></Image>
         <Text style={styles.title}>
-            {title.lenght > 15 ? title.substring(0, 15 - 3)
-             + '...' : title}
+            {first_name} {last_name}
         </Text>
-        <Text style={styles.price}>${price}</Text>
+        <Text style={styles.price}>{email}</Text>
         
         
     </View>
@@ -67,7 +66,7 @@ price: {
    
    fontSize: 20, 
    color: 'orange',
-    marginTop: 20
+    marginTop: 100
 }
 
 })
